@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "mat.easieranvils.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+      "AnvilScreenHandlerMixin",
+		"AnvilBlockMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
