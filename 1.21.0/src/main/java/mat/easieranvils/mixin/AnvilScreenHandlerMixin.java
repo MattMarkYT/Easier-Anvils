@@ -56,49 +56,11 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandler {
 	}
 
 	/**
-	 * Overwrites on TakeOutput
+	 * Injects code into onTakeOutput
 	 */
-	public void onTakeOutput(PlayerEntity player, ItemStack stack) {
-        LOGGER.info("Cost is {}", this.levelCost.get());
-		if (this.input.getStack(1) != ItemStack.EMPTY){
-			LOGGER.info("BRUH IF");
-			if (!player.getAbilities().creativeMode) {
-				player.addExperienceLevels(-this.levelCost.get());
-			}
-
-			this.input.setStack(0, ItemStack.EMPTY);
-			if (this.repairItemUsage > 0) {
-				ItemStack itemStack = this.input.getStack(1);
-				if (!itemStack.isEmpty() && itemStack.getCount() > this.repairItemUsage) {
-					itemStack.decrement(this.repairItemUsage);
-					this.input.setStack(1, itemStack);
-				} else {
-					this.input.setStack(1, ItemStack.EMPTY);
-				}
-			} else {
-				this.input.setStack(1, ItemStack.EMPTY);
-			}
-
-			this.levelCost.set(0);
-			this.context.run((world, pos) -> {
-				BlockState blockState = world.getBlockState(pos);
-				if (!player.isInCreativeMode() && blockState.isIn(BlockTags.ANVIL) && player.getRandom().nextFloat() < 0.12F) {
-					BlockState blockState2 = AnvilBlock.getLandingState(blockState);
-					if (blockState2 == null) {
-						world.removeBlock(pos, false);
-						world.syncWorldEvent(1029, pos, 0);
-					} else {
-						world.setBlockState(pos, blockState2, 2);
-						world.syncWorldEvent(1030, pos, 0);
-					}
-				} else {
-					world.syncWorldEvent(1030, pos, 0);
-				}
-
-			});
-		}
-		else{
-			LOGGER.info("BRUH ELSE");
+	@Inject(method="onTakeOutput",at=@At("HEAD"),cancellable = true)
+	public void onTakeOutputMixin(PlayerEntity player, ItemStack stack, CallbackInfo ci) {
+		if (this.input.getStack(1) == ItemStack.EMPTY) {
 			player.addExperienceLevels(0);
 			this.input.setStack(0, ItemStack.EMPTY);
 			this.levelCost.set(0);
@@ -106,6 +68,7 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandler {
 				BlockState blockState = world.getBlockState(pos);
 				world.syncWorldEvent(1030, pos, 0);
 			});
+			ci.cancel();
 		}
 	}
 
