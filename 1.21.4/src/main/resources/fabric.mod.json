@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "easier-anvils",
+	"version": "${version}",
+	"name": "Easier Anvils",
+	"description": "Like Easy Anvils, but server-side",
+	"authors": [
+		"MattMarkYT"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/easier-anvils/icon.png",
+	"environment": "server",
+	"entrypoints": {
+		"main": [
+			"mat.easieranvils.EasierAnvils"
+		]
+	},
+	"mixins": [
+		"easier-anvils.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21.4",
+		"java": ">=21"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
