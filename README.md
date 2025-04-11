@@ -7,8 +7,8 @@
 - "Too expensive" workaround for vanilla players with custom xp cap
 
 ## Configure the mod how you want it:
-- Use "/easieranvils <setting> <argument>" to enable/disable features or change values
-- Use "/easieranvils <setting>" to check whether a feature is enabled
+- Use "/easieranvils \<setting> \<argument>" to enable/disable features or change values
+- Use "/easieranvils \<setting>" to check whether a feature is enabled
 - Change the xp cap or the color code symbol to your liking
 
 ## Confused?
