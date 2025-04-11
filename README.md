@@ -12,6 +12,6 @@
 - Change the xp cap or the color code symbol to your liking
 
 ## Confused?
-Any player can run "/easieranvils help" to recieve information on how to use the mod
+Any player can run "/easieranvils help" to receive information on how to use the mod
 
 ### Not tested for compatibility with other anvil mods. It may be incompatible.
