@@ -1,11 +1,16 @@
-This is my first mod. I'm not a professional.
- 
-Easy Anvils, but server-side
+# It's like Easy Anvils, but server-side.
 
-It may not be compatible with other mods. It may be unstable.
-
-Features:
+## Features:
 - Heal anvils using iron blocks
-- Format codes in item names by using & in place of §
-- Free item renaming (doesn't damage anvil)
-- "Too expensive" workaround by putting tool in main hand and book, item, or ingredient in off hand, then interacting with anvil (punch anvil to check cost first. Cost capped to 55 levels, may add mod config later to change value)
+- Color item names using alternative symbol for Minecraft Color Codes
+- Free item renaming that doesn't damage anvil
+- "Too expensive" workaround for vanilla players with custom xp cap
+
+## Configure the mod how you want it:
+- Use commands to enable or disable features
+- Change the xp cap or the color code symbol
+
+## Confused?
+Use /easieranvils help to recieve information on how to use the mod
+
+### Not tested for compatibility with other anvil mods. It may be incompatible.
