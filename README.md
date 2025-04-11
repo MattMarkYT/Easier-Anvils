@@ -7,10 +7,11 @@
 - "Too expensive" workaround for vanilla players with custom xp cap
 
 ## Configure the mod how you want it:
-- Use commands to enable or disable features
-- Change the xp cap or the color code symbol
+- Use "/easieranvils <setting> <argument>" to enable/disable features or change values
+- Use "/easieranvils <setting>" to check whether a feature is enabled
+- Change the xp cap or the color code symbol to your liking
 
 ## Confused?
-Use /easieranvils help to recieve information on how to use the mod
+Any player can run "/easieranvils help" to recieve information on how to use the mod
 
 ### Not tested for compatibility with other anvil mods. It may be incompatible.
